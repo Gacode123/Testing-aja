@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Our Special Day</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload background images untuk smooth scrolling -->
+    <link rel="preload" as="image" href="MLJ04741.JPG">
+    <link rel="preload" as="image" href="MAIN BG.JPG">
+    <link rel="preload" as="image" href="Background 1.JPG">
+    <link rel="preload" as="image" href="Background 2.JPG">
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('MLJ04741.JPG');"></div>
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('MAIN BG.JPG');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="fade-in">
+                <p class="hero-subtitle">The Wedding of</p>
+                <h1 class="couple-names">
+                    <span class="bride-name">Livia</span>
+                    <span class="ampersand">&</span>
+                    <span class="groom-name">William</span>
+                </h1>
+                <p class="wedding-date">31 Januari 2026</p>
+                <div class="divider">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">Countdown Menuju Hari Bahagia Kami</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Details Section -->
+    <section class="details-section" id="details">
+        <div class="container">
+            <h2 class="section-title">Detail Acara</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3>Pemberkatan</h3>
+                    <p class="detail-time">08:30 WIB</p>
+                    <p class="detail-location">Catholic Church of Christ Salvator</p>
+                    <p class="detail-address">Jl. Karel Satsuit Tubun No.128 2, Slipi, Palmerah, Jakarta Barat 11420</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Catholic+Church+of+Christ+Salvator+Slipi+Jakarta" target="_blank" class="btn-link">
+                        <i class="fas fa-map-marker-alt"></i> Lihat Peta
+                    </a>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Resepsi</h3>
+                    <p class="detail-time">13:00 WIB</p>
+                    <p class="detail-location">Azalia Hall</p>
+                    <p class="detail-address">Jl. Teluk Betung No.41, Kb. Melati, Tanah Abang, Jakarta Pusat 10230</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Teluk+Betung+No.41+Kb.+Melati+Tanah+Abang+Jakarta+Pusat+10230" target="_blank" class="btn-link">
+                        <i class="fas fa-map-marker-alt"></i> Lihat Peta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Foto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="MLJ04741.JPG" alt="Wedding Photo 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="MLJ04742.JPG" alt="Wedding Photo 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="MLJ04743.JPG" alt="Wedding Photo 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="MLJ04744.JPG" alt="Wedding Photo 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="MLJ04741.JPG" alt="Wedding Photo 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="MLJ04742.JPG" alt="Wedding Photo 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="container">
+            <h2 class="section-title">RSVP</h2>
+            <p class="rsvp-subtitle">Mohon konfirmasi kehadiran Anda sebelum 15 Januari 2026</p>
+            
+            <!-- Guest Info Display -->
+            <div class="guest-info" id="guestInfo">
+                <div class="guest-welcome">
+                    <h3>Kepada Yth.</h3>
+                    <p class="guest-name" id="guestName">Loading...</p>
+                    <div class="guest-pax-info">
+                        <span class="pax-badge" id="guestPax"></span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="rsvp-form" id="rsvpForm">
+                <!-- Hidden fields for guest data -->
+                <input type="hidden" id="guestNameHidden" name="guestName">
+                <input type="hidden" id="guestPaxHidden" name="guestPax">
+                
+                <div class="form-group">
+                    <label>Apakah Anda akan hadir? *</label>
+                    <div class="attendance-buttons">
+                        <button type="button" class="attendance-btn" data-value="yes">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ya, Saya Hadir!</span>
+                        </button>
+                        <button type="button" class="attendance-btn" data-value="no">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Maaf, Tidak Bisa Hadir</span>
+                        </button>
+                    </div>
+                    <input type="hidden" id="attendance" name="attendance" required>
+                </div>
+                
+                <div class="form-group" id="messageGroup">
+                    <label for="message">Pesan untuk Mempelai (Opsional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tuliskan ucapan dan doa Anda..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit" id="submitBtn" disabled>
+                    <i class="fas fa-paper-plane"></i> Kirim Konfirmasi
+                </button>
+            </form>
+
+            <div class="rsvp-success" id="rsvpSuccess">
+                <i class="fas fa-check-circle"></i>
+                <h3>Terima Kasih!</h3>
+                <p id="successMessage">RSVP Anda telah kami terima. Kami menantikan kehadiran Anda!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-quote">"Love is composed of a single soul inhabiting two bodies."</p>
+                <p class="footer-author">- Aristotle</p>
+                <div class="footer-divider">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <p class="footer-text">Terima kasih telah menjadi bagian dari hari istimewa kami</p>
+                <p class="footer-names">Livia & William</p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

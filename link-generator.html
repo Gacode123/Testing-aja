@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Generator - Wedding Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .input-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .result-section {
+            display: none;
+            background: #e8f5e9;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .link-display {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            word-break: break-all;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 14px;
+            border: 2px solid #4caf50;
+        }
+
+        .copy-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .copy-btn:hover {
+            background: #45a049;
+        }
+
+        .test-btn {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .test-btn:hover {
+            background: #0b7dda;
+        }
+
+        .batch-section {
+            background: #fff3e0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .batch-section h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        .example {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .batch-result {
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #ff9800;
+        }
+
+        .link-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .link-item strong {
+            color: #333;
+        }
+
+        .link-item code {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            word-break: break-all;
+        }
+
+        .tips {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .tips h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .tips ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .tips li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎊 Link Generator Undangan</h1>
+        <p class="subtitle">Livia & William Wedding Invitation</p>
+
+        <!-- Single Link Generator -->
+        <div class="input-section">
+            <h3>Generate Link Pribadi</h3>
+            <div class="form-group">
+                <label for="guestName">Nama Tamu *</label>
+                <input type="text" id="guestName" placeholder="Contoh: Asep & Budimanwati">
+            </div>
+            <div class="form-group">
+                <label for="guestPax">Jumlah Pax *</label>
+                <select id="guestPax">
+                    <option value="1">1 Pax</option>
+                    <option value="2" selected>2 Pax</option>
+                    <option value="3">3 Pax</option>
+                    <option value="4">4 Pax</option>
+                    <option value="5">5 Pax</option>
+                </select>
+            </div>
+            <button class="btn" onclick="generateSingleLink()">Generate Link</button>
+        </div>
+
+        <!-- Result Display -->
+        <div class="result-section" id="resultSection">
+            <h3>✅ Link Berhasil Dibuat!</h3>
+            <p><strong>Nama:</strong> <span id="displayName"></span></p>
+            <p><strong>Pax:</strong> <span id="displayPax"></span> Pax</p>
+            
+            <h4 style="margin-top: 20px;">Link Lengkap:</h4>
+            <div class="link-display" id="fullLink"></div>
+            
+            <button class="copy-btn" onclick="copyLink('fullLink')">📋 Copy Link</button>
+            <button class="test-btn" onclick="testLink()">🔍 Test Link</button>
+        </div>
+
+        <!-- Batch Generator -->
+        <div class="batch-section">
+            <h3>📋 Batch Generator (Multiple Links)</h3>
+            <p>Format: <code>Nama, Pax</code> (satu baris per tamu)</p>
+            
+            <div class="example">
+                Contoh:<br>
+                Asep & Budimanwati, 2<br>
+                Budi Santoso, 1<br>
+                Keluarga Hartono, 2<br>
+                Bapak Ahmad & Keluarga, 4
+            </div>
+            
+            <textarea id="batchInput" placeholder="Masukkan daftar tamu..."></textarea>
+            
+            <button class="btn" onclick="generateBatchLinks()" style="margin-top: 15px;">
+                Generate Semua Link
+            </button>
+            
+            <div class="batch-result" id="batchResult" style="display: none;"></div>
+            
+            <button class="copy-btn" onclick="copyBatchLinks()" id="copyBatchBtn" style="display: none; margin-top: 15px;">
+                📋 Copy Semua Link
+            </button>
+        </div>
+
+        <!-- Tips -->
+        <div class="tips">
+            <h4>💡 Tips Penggunaan:</h4>
+            <ul>
+                <li>Link sudah otomatis ter-encode, bisa langsung digunakan</li>
+                <li>Gunakan tombol "Copy Link" untuk copy ke clipboard</li>
+                <li>Test link sebelum dikirim ke tamu</li>
+                <li>Untuk WhatsApp, bisa langsung paste link setelah di-copy</li>
+                <li>Disarankan gunakan URL shortener (bit.ly, s.id) untuk link yang lebih pendek</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Get the base URL (adjust if needed)
+        const baseURL = window.location.href.replace('link-generator.html', 'index.html');
+
+        function generateSingleLink() {
+            const name = document.getElementById('guestName').value.trim();
+            const pax = document.getElementById('guestPax').value;
+
+            if (!name) {
+                alert('Mohon isi nama tamu!');
+                return;
+            }
+
+            const encodedName = encodeURIComponent(name);
+            const link = `${baseURL}?name=${encodedName}&pax=${pax}`;
+
+            // Display result
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('displayPax').textContent = pax;
+            document.getElementById('fullLink').textContent = link;
+            document.getElementById('resultSection').classList.add('show');
+
+            // Scroll to result
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyLink(elementId) {
+            const linkText = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(linkText).then(() => {
+                alert('✅ Link berhasil di-copy ke clipboard!');
+            }).catch(err => {
+                console.error('Error copying:', err);
+                alert('❌ Gagal copy link. Silakan copy manual.');
+            });
+        }
+
+        function testLink() {
+            const link = document.getElementById('fullLink').textContent;
+            window.open(link, '_blank');
+        }
+
+        function generateBatchLinks() {
+            const input = document.getElementById('batchInput').value.trim();
+            
+            if (!input) {
+                alert('Mohon isi daftar tamu!');
+                return;
+            }
+
+            const lines = input.split('\n');
+            let html = '<h4>Links Generated:</h4>';
+            let allLinks = [];
+
+            lines.forEach((line, index) => {
+                const parts = line.split(',');
+                if (parts.length >= 2) {
+                    const name = parts[0].trim();
+                    const pax = parts[1].trim();
+                    
+                    if (name && pax) {
+                        const encodedName = encodeURIComponent(name);
+                        const link = `${baseURL}?name=${encodedName}&pax=${pax}`;
+                        
+                        allLinks.push(`${name}: ${link}`);
+                        
+                        html += `
+                            <div class="link-item">
+                                <strong>${index + 1}. ${name}</strong> (${pax} pax)
+                                <code>${link}</code>
+                            </div>
+                        `;
+                    }
+                }
+            });
+
+            document.getElementById('batchResult').innerHTML = html;
+            document.getElementById('batchResult').style.display = 'block';
+            document.getElementById('copyBatchBtn').style.display = 'inline-block';
+            
+            // Store links for copy
+            window.generatedLinks = allLinks;
+
+            // Scroll to result
+            document.getElementById('batchResult').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyBatchLinks() {
+            if (window.generatedLinks) {
+                const text = window.generatedLinks.join('\n\n');
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('✅ Semua link berhasil di-copy ke clipboard!');
+                }).catch(err => {
+                    console.error('Error copying:', err);
+                    alert('❌ Gagal copy links. Silakan copy manual.');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+
