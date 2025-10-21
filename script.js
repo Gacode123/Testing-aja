@@ -70,6 +70,7 @@ document.querySelectorAll('.couple-card, .detail-card, .gallery-item, .timeline-
 // Music Player Toggle
 let isPlaying = false;
 const musicPlayer = document.getElementById('musicPlayer');
+const bgMusic = document.getElementById('bgMusic');
 
 musicPlayer.addEventListener('click', () => {
     isPlaying = !isPlaying;
@@ -77,13 +78,11 @@ musicPlayer.addEventListener('click', () => {
     if (isPlaying) {
         musicPlayer.innerHTML = '<i class="fas fa-pause"></i>';
         musicPlayer.style.animation = 'spin 3s linear infinite';
-        // If you have an audio element, play it here:
-        // document.getElementById('backgroundMusic').play();
+        bgMusic.play().catch(e => console.log('Audio play failed:', e));
     } else {
         musicPlayer.innerHTML = '<i class="fas fa-music"></i>';
         musicPlayer.style.animation = '';
-        // If you have an audio element, pause it here:
-        // document.getElementById('backgroundMusic').pause();
+        bgMusic.pause();
     }
 });
 
