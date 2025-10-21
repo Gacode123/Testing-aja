@@ -169,6 +169,68 @@ body::after {
     text-align: center;
     color: var(--white);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Guest Greeting Styles */
+.guest-greeting {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+    border: 2px solid var(--primary-color);
+    max-width: 600px;
+}
+
+.greeting-ornament {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin: 10px 0;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.greeting-text {
+    font-size: 16px;
+    color: var(--text-light);
+    margin: 10px 0 5px;
+    font-style: italic;
+}
+
+.greeting-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.greeting-message {
+    font-size: 16px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in {
@@ -1243,6 +1305,23 @@ body::after {
 }
 
 @media (max-width: 640px) {
+    .guest-greeting {
+        padding: 20px 25px;
+        max-width: 90%;
+    }
+    
+    .greeting-name {
+        font-size: 24px;
+    }
+    
+    .greeting-message {
+        font-size: 14px;
+    }
+    
+    .greeting-ornament {
+        font-size: 20px;
+    }
+    
     .couple-names {
         font-size: 3rem;
     }

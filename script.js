@@ -111,9 +111,19 @@ function initializePersonalizedRSVP() {
     const { name, pax } = getUrlParameters();
     
     if (name) {
-        // Display guest info
-        document.getElementById('guestName').textContent = decodeURIComponent(name);
-        document.getElementById('guestNameHidden').value = decodeURIComponent(name);
+        const decodedName = decodeURIComponent(name);
+        
+        // Display guest info in hero greeting
+        const heroGreeting = document.getElementById('heroGreeting');
+        const heroGuestName = document.getElementById('heroGuestName');
+        if (heroGreeting && heroGuestName) {
+            heroGuestName.textContent = decodedName;
+            heroGreeting.style.display = 'block';
+        }
+        
+        // Display guest info in RSVP section
+        document.getElementById('guestName').textContent = decodedName;
+        document.getElementById('guestNameHidden').value = decodedName;
         
         if (pax) {
             const paxText = `${pax} Pax`;
