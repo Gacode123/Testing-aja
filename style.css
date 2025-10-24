@@ -406,6 +406,42 @@ body::after {
     background: var(--gradient);
 }
 
+.save-the-date {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.save-the-date-title {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.save-the-date-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.save-the-date-venue {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
 .countdown {
     display: flex;
     justify-content: center;
@@ -1571,6 +1607,23 @@ body::after {
     
     .countdown-value {
         font-size: 2.5rem;
+    }
+    
+    .save-the-date {
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .save-the-date-title {
+        font-size: 0.9rem;
+    }
+    
+    .save-the-date-date {
+        font-size: 1.5rem;
+    }
+    
+    .save-the-date-venue {
+        font-size: 1rem;
     }
     
     .section-title {
