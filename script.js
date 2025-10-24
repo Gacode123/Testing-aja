@@ -330,6 +330,38 @@ function copyInvitationLink() {
 // You can add a share button that calls this function
 // Example: <button onclick="copyInvitationLink()">Share Invitation</button>
 
+// Easter Egg - Heart Click
+const easterEggHeart = document.getElementById('easterEggHeart');
+const easterEggModal = document.getElementById('easterEggModal');
+const closeModal = document.getElementById('closeModal');
+
+if (easterEggHeart) {
+    easterEggHeart.addEventListener('click', function() {
+        easterEggModal.style.display = 'block';
+        console.log('Easter egg activated! 🥚💛');
+    });
+}
+
+if (closeModal) {
+    closeModal.addEventListener('click', function() {
+        easterEggModal.style.display = 'none';
+    });
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    if (event.target == easterEggModal) {
+        easterEggModal.style.display = 'none';
+    }
+});
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && easterEggModal.style.display === 'block') {
+        easterEggModal.style.display = 'none';
+    }
+});
+
 console.log('Wedding Invitation Script Loaded ✨');
 console.log('Livia Fyoni Kemit & William Surya Darma - 31 Januari 2026');
 
