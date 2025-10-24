@@ -448,13 +448,29 @@ body::after {
 /* Couple Section */
 .couple-section {
     padding: 100px 20px;
-    background: var(--bg-light);
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+        url('Background 2.JPG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    position: relative;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .couple-section .section-title {
     text-align: center;
     display: block;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 60px;
 }
 
 .couple-grid {
@@ -462,46 +478,66 @@ body::after {
     grid-template-columns: 1fr auto 1fr;
     gap: 60px;
     align-items: center;
-    margin-bottom: 100px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .couple-card {
     text-align: center;
-    padding: 40px;
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.couple-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.couple-card:hover::before {
+    transform: scaleX(1);
 }
 
 .couple-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.couple-photo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
 }
 
 .couple-photo {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 30px;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-    transition: transform 0.3s ease;
+    border: 6px solid var(--primary-color);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+    transition: all 0.4s ease;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .couple-photo:hover {
     transform: scale(1.05);
-}
-
-.couple-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.couple-photo:hover img {
-    transform: scale(1.1);
+    border-color: var(--accent-color);
 }
 
 .photo-placeholder {
@@ -509,45 +545,93 @@ body::after {
     height: 100%;
     background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 }
 
 .photo-placeholder i {
-    font-size: 100px;
+    font-size: 80px;
     color: var(--white);
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-.couple-card-name {
+.photo-placeholder p {
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 20px;
+    opacity: 0.9;
+}
+
+.couple-ornament {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.couple-ornament i {
+    color: var(--white);
+    font-size: 24px;
+}
+
+.couple-info {
+    padding-top: 10px;
+}
+
+.couple-name {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 10px;
+    line-height: 1.3;
 }
 
-.couple-card-title {
+.couple-title {
     font-size: 1rem;
     color: var(--primary-color);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
-.couple-card-description {
-    color: var(--text-light);
-    margin-bottom: 30px;
+.couple-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--gradient);
+    margin: 20px auto;
 }
 
-.social-links {
+.couple-description {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.couple-social {
     display: flex;
     gap: 15px;
     justify-content: center;
+    margin-top: 25px;
 }
 
-.social-link {
-    width: 40px;
-    height: 40px;
+.couple-social-link {
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: var(--bg-light);
     display: flex;
@@ -556,18 +640,48 @@ body::after {
     color: var(--text-dark);
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.social-link:hover {
+.couple-social-link:hover {
     background: var(--gradient);
     color: var(--white);
-    transform: scale(1.1);
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
 }
 
-.heart-divider {
-    font-size: 3rem;
-    color: var(--primary-color);
+.couple-social-link i {
+    font-size: 20px;
+}
+
+.couple-divider-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
     animation: heartBeat 2s infinite;
+}
+
+.heart-icon i {
+    font-size: 40px;
+    color: var(--white);
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(1.1); }
+    20%, 40% { transform: scale(1); }
 }
 
 /* Love Story Timeline */
@@ -1282,8 +1396,17 @@ body::after {
         gap: 40px;
     }
     
-    .heart-divider {
-        order: 2;
+    .couple-divider-center {
+        display: none;
+    }
+    
+    .couple-photo {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .couple-name {
+        font-size: 2rem;
     }
     
     .story-timeline::before {
@@ -1362,6 +1485,36 @@ body::after {
     
     .section-title {
         font-size: 2rem;
+    }
+    
+    .couple-section {
+        padding: 60px 20px;
+    }
+    
+    .couple-card {
+        padding: 40px 30px;
+    }
+    
+    .couple-photo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .couple-name {
+        font-size: 1.8rem;
+    }
+    
+    .couple-title {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    
+    .couple-description {
+        font-size: 0.9rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
     }
     
     .rsvp-form {
