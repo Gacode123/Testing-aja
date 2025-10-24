@@ -863,6 +863,14 @@ body::after {
     margin-bottom: 20px;
 }
 
+.detail-date {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
 .detail-time {
     font-size: 1.5rem;
     font-weight: 600;
