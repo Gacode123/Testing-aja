@@ -1391,12 +1391,14 @@ body::after {
 
 .footer-quote {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     margin-bottom: 30px;
     color: var(--primary-color);
     letter-spacing: 1px;
-    text-align: right;
+    font-style: italic;
+    text-align: center;
+    padding-left: 40%;
 }
 
 .footer-verse {

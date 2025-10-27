@@ -14,7 +14,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Countdown Timer
 function updateCountdown() {
-    const weddingDate = new Date('January 31, 2026 13:00:00').getTime();
+    const weddingDate = new Date('January 31, 2026 08:00:00').getTime();
     
     const updateTimer = () => {
         const now = new Date().getTime();
@@ -58,14 +58,6 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
-// Observe all sections for animation
-document.querySelectorAll('.countdown-section, .couple-section, .details-section, .gallery-section, .rsvp-section, .footer').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(50px)';
-    section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(section);
-});
 
 // Observe individual elements for animation
 document.querySelectorAll('.couple-card, .detail-card, .gallery-item, .timeline-item').forEach(el => {
