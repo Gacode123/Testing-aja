@@ -1,3 +1,20 @@
+// Hero scroll effect - aktif saat mulai scroll
+const heroSection = document.querySelector('.hero');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Jika scroll lebih dari 50px dari top, aktifkan effect
+    if (scrollTop > 50) {
+        heroSection.classList.add('scrolled');
+    } else {
+        heroSection.classList.remove('scrolled');
+    }
+    
+    lastScrollTop = scrollTop;
+}, { passive: true });
+
 // Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
